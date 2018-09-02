@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/maryfsc/mry-card-validator/issues"
   },
-  "homepage": "https://github.com/maryfsc/mry-card-validator#readme"
+  "homepage": "https://github.com/maryfsc/mry-card-validator#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
 }
