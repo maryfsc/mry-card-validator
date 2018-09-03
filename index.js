@@ -19,23 +19,15 @@ module.exports.cardValidator = function cardValidator (input) {
     throw new Error('Parameter should be a number');
   }
 
-  
-
   let reversedNumber = Array.from(input.toString()).map(Number).reverse();
+
+  if (input.toString().length === 1) {
+    throw new Error('Number is too short')
+  }  
   
   let singleDigitsArray = reversedNumber.map(num => multiplyOddIndexes(num, 0));
 
-  let sum = singleDigitsArray.reduce((a, b) => a + b, 0);
+  let result = singleDigitsArray.reduce((a, b) => a + b, 0);
 
-  return sum % 10 === 0 ? true : false;
+  return result % 10 === 0 ? true : false;
 };
-
-// try {
- 
-//   
-//   if (input.toString().length === 1) throw 'Number is too short';
-// }
-
-// catch(err) {
-//   err;
-// }
