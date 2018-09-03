@@ -1,15 +1,3 @@
-module.exports.multiplyOddIndexes = function multiplyOddIndexes(digit, index) {
-  if (index % 2 === 0){
-    return digit;
-  } else {
-    if (digit * 2 <= 9) {
-      return digit * 2;
-    } else {
-      return digit * 2 - 9;
-    }
-  }
-};
-
 module.exports.cardValidator = function cardValidator (input) {
   if (input === undefined) {
     throw new Error('None parameter is given');
@@ -19,13 +7,16 @@ module.exports.cardValidator = function cardValidator (input) {
     throw new Error('Parameter should be a number');
   }
 
-  let reversedNumber = Array.from(input.toString()).map(Number).reverse();
+  let reversedNumber = Array.from(input.toString()).reverse().map(Number);
 
   if (input.toString().length === 1) {
     throw new Error('Number is too short')
   }  
   
-  let singleDigitsArray = reversedNumber.map(num => multiplyOddIndexes(num, 0));
+  let singleDigitsArray = reversedNumber.map((digit, index) => {
+    const position = index % 2 !== 0 ? digit * 2 : digit;
+    return position >= 10 ? position - 9 : position;
+  });
 
   let result = singleDigitsArray.reduce((a, b) => a + b, 0);
 
