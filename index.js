@@ -10,11 +10,11 @@ module.exports.cardValidator = function cardValidator (input) {
   let reversedNumber = Array.from(input.toString()).reverse().map(Number);
 
   if (input.toString().length === 1) {
-    throw new Error('Number is too short')
+    throw new Error('Number is too short');
   }  
   
   let singleDigitsArray = reversedNumber.map((digit, index) => {
-    const position = index % 2 !== 0 ? digit * 2 : digit;
+    let position = index % 2 !== 0 ? digit * 2 : digit;
     return position >= 10 ? position - 9 : position;
   });
 

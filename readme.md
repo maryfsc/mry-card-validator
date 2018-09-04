@@ -16,11 +16,14 @@ You can easily install this library using npm just as it follows:
 And you can use it just as easily with Node.js:
 
 	$ node
-	> const library = require('mry-card-validator)
+	> const library = require('mry-card-validator')
 	> library.cardValidator(36490102462661)
 	> // true
 
 ## Roadmap
+
+Version 1.0.1
+* Removes minor bugs.
 
 Version 1.0.0
 * Returns `true` if a credit card is valid; `false` if it's not.
