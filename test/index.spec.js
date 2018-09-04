@@ -8,7 +8,7 @@ const cardValidator = cardLib.cardValidator;
 describe('cardLib', function() {
  describe('when parameter is not a number', function() {
    it('should throw an error', function() {
-     let noNumber = () => { cardLib.cardValidator('text') };
+     let noNumber = () => { cardLib.cardValidator('36490102462661') };
      expect(noNumber).to.throw('Parameter should be a number');
    });
  });
