@@ -22,6 +22,13 @@ And you can use it just as easily with Node.js:
 
 ## Roadmap
 
+Version 1.0.3
+* Returns `true` if a credit card is valid; `false` if it's not.
+* Removes minor bugs.
+
+Version 1.0.2
+* Removes validation bugs.
+
 Version 1.0.1
 * Removes minor bugs.
 
